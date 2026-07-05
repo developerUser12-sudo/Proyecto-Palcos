@@ -1,15 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
 </head>
 
 <body>
     <header th:fragment="header">
-        <h2>Consejo de hermandades de Utrera</h2>
+        <nav>
+            <div>
+                <a href="/">
+                    <img src="" alt="Logo">
+                </a>
+            </div>
+            <div sec:authorize="isAuthenticated()">
+                <ul>
+                    <li><a href="">Mis reservas</a></li>
+                    <li><a href="">Mi cuenta</a></li>
+                </ul>
+            </div>
+            <div sec:authorize="isAnonymous()">
+                <ul>
+                    <li><a href="/login">Iniciar sesión</a></li>
+                    <li><a href="/registrarse">Registrarse</a></li>
+                </ul>
+            </div>
+        </nav>
     </header>
     <main th:fragment="content">
 

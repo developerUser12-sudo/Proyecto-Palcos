@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+
+</head>
+
+<body>
+    <header th:replace="~{layout :: header}">
+
+    </header>
+    <main>
+        <div class="login-box">
+            <div>
+                <h1>Consejo de Hermandades de Utrera</h1>
+                <p>Reserva ya tu palco para semana santa</p>
+            </div>
+            <form action="/registrarse" method="post">
+                <div class="form-group">
+                    <label for="nombre">Nombre *</label>
+                    <input type="text" name="nombre" id="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono</label>
+                    <input type="text" name="telefono" id="telefono">
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo electrónico *</label>
+                    <input type="email" name="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="contrasena">Contraseña *</label>
+                    <input type="password" name="contrasena" id="contrasena" required>
+                </div>
+                <input class="submit" type="submit" value="Registrarse">
+                <p th:if="${param.error}">
+                    Usuario ya existente
+                </p>
+                <div>
+                    <p>¿Ya tienes cuenta? <a href="/login" style="text-decoration: underline;">Pincha aquí</a></p> 
+                </div>
+                <p>Los campos marcados con * serán obligatorios</p>
+            </form>
+        </div>
+    </main>
+    <footer th:replace="~{layout :: footer}"></footer>
+</body>
+
+</html>

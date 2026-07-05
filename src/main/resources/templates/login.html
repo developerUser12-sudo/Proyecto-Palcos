@@ -1,15 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+
 </head>
+
 <body>
-    <header th:replace="layout :: header">
+    <header th:replace="~{layout :: header}">
 
     </header>
-    <main>Login</main>
-    <footer th:replace="layout :: footer"></footer>
+    <main>
+
+        <div>
+            <form action="/login" method="post">
+                <div>
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" name="email" id="emails" required>
+                </div>
+                <div>
+                    <label for="contrasena">Contraseña</label>
+                    <input type="password" name="contrasena" id="contrasena" required>
+                </div>
+                <input type="submit" value="Iniciar sesión">
+            </form>
+            <p th:if="${param.error}">
+                Usuario o contraseña incorrectos
+            </p>
+        </div>
+    </main>
+    <footer th:replace="~{layout :: footer}"></footer>
 </body>
+
 </html>

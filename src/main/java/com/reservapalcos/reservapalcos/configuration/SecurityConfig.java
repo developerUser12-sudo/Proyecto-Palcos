@@ -11,16 +11,20 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
+                .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/login", "/registrarse", "/css/**", "/js/**").permitAll()
+                .requestMatchers("/", "/css/**", "/js/**").permitAll()
+                .requestMatchers("/login","/registrarse").anonymous()
                 .anyRequest().authenticated()
                 )
                 .formLogin(form -> form
                 .loginPage("/login")
+                .loginProcessingUrl("/login")
                 .defaultSuccessUrl("/", true)
+                .usernameParameter("email")
+                .passwordParameter("contrasena")
                 .permitAll()
-                )
-                .logout(logout -> logout.logoutSuccessUrl("/login?logout"));
+                );
         return http.build();
     }
 }

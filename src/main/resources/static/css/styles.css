@@ -1,0 +1,117 @@
+h1 {
+    font-size: 2.2em;
+}
+
+h2 {
+    font-size: 1.9em;
+}
+
+h3 {
+    font-size: 1.7em;
+}
+
+h4 {
+    font-size: 1.4em;
+}
+
+p {
+    font-size: 1.05em;
+
+}
+
+* {
+    color: white;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+footer {
+    padding: 1.4em;
+    background-color: #4e4848;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 1.3em;
+
+}
+
+nav {
+    background-color: #4e4848;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 1.4em;
+}
+
+a {
+    text-decoration: none;
+}
+
+.form-group label,
+.form-group input {
+    display: block;
+    margin-top: 10px;
+}
+
+input {
+    border-radius: 5px;
+    padding: 6px;
+    border: none;
+    color: black;
+}
+
+.submit  {
+    margin-top: 13px;
+    background-color: #2e2b2b;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+}
+
+.login-box {
+    background-color: #4e4848;
+    width: 55vw;
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 0.5em;
+
+}
+.login-box form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media screen and (max-width:800px) {
+    .login-box{
+        flex-direction: column;
+    }
+}
