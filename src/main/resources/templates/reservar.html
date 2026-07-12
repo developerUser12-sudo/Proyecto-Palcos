@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+
+</head>
+
+<body>
+    <header th:replace="~{layout :: header}">
+
+    </header>
+    <main>
+        <div class="box">
+            <form action="/reservar" method="post">
+                <div class="form-palcos">
+                    <div class="">
+                        <label for="dia">Días</label>
+                        <div th:each="dia : ${dias}">
+                            <input type="checkbox" th:text="${dia.nombre}" name="dia" th:value="${dia}">
+                        </div>
+                    </div>
+                    <div class="palcos ">
+                        <div class="grid-palcos">
+
+                            <div th:each="palco,stat:${palcos}" th:if="${stat.index<4}">
+                                <label for="">
+
+                                    <input type="checkbox" name="palco" th:value="${palco.id}"
+                                        th:disabled="${palcosOcupados.contains(palco.id)}" th:text="${palco.codigo}">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="grid-palcos">
+
+                            <div th:each="palco,stat:${palcos}" th:if="${stat.index>=4}">
+                                <label for="">
+
+                                    <input type="checkbox" name="palco" th:value="${palco.id}"
+                                        th:disabled="${palcosOcupados.contains(palco.id)}" th:text="${palco.codigo}">
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <input type="submit" value="Reservar">
+            </form>
+        </div>
+    </main>
+    <footer th:replace="~{layout :: footer}"></footer>
+
+</body>
+
+</html>

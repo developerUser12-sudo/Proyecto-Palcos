@@ -8,6 +8,17 @@
 
 </head>
 <body>
-    <p>fewq</p>
+    <header th:replace="~{layout :: header}">
+
+    </header>
+    <main>
+        <div class="box" style="text-align: center;">
+            <h1>Reserva de palcos para carrera oficial</h1>
+            <form action="/reservar" method="get">
+                <input type="submit" value="Reservar palco">
+            </form>
+        </div>
+    </main>
+    <footer th:replace="~{layout :: footer}"></footer>
 </body>
 </html>

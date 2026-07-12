@@ -16,8 +16,6 @@ public class AuthController {
         this.auth = auth;
     }
 
-    
-
     @PostMapping("/registrarse")
     public String registrarse(@ModelAttribute Usuario usuario) {
         boolean registrarse = auth.registrar(usuario);

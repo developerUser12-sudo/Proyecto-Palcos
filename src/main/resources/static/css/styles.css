@@ -84,7 +84,7 @@ input {
     color: black;
 }
 
-.submit  {
+.submit {
     margin-top: 13px;
     background-color: #2e2b2b;
     padding: 10px;
@@ -92,11 +92,15 @@ input {
     color: white;
 }
 
-.login-box {
+.box {
     background-color: #4e4848;
     width: 55vw;
     border-radius: 10px;
     padding: 30px;
+
+}
+
+.login-box {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -104,14 +108,51 @@ input {
     gap: 0.5em;
 
 }
-.login-box form{
+
+.login-box form {
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
 @media screen and (max-width:800px) {
-    .login-box{
+    .login-box {
+        flex-direction: column;
+    }
+}
+
+.error {
+    color: rgb(195, 25, 25)
+}
+
+.form-reserva {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.grid-palcos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+}
+
+.palcos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 70px;
+}
+
+.form-palcos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+@media screen and (max-width:750px) {
+    .form-palcos {
         flex-direction: column;
     }
 }

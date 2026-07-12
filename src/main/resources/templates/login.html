@@ -15,21 +15,28 @@
     </header>
     <main>
 
-        <div>
+        <div class="box login-box">
+            <div>
+                <h1>Consejo de Hermandades de Utrera</h1>
+                <p>Reserva ya tu palco para semana santa</p>
+            </div>
             <form action="/login" method="post">
-                <div>
+                <div class="form-group">
                     <label for="email">Correo electrónico</label>
                     <input type="email" name="email" id="emails" required>
                 </div>
-                <div>
+                <div class="form-group">
                     <label for="contrasena">Contraseña</label>
                     <input type="password" name="contrasena" id="contrasena" required>
                 </div>
-                <input type="submit" value="Iniciar sesión">
+                <input class="submit" type="submit" value="Iniciar sesión">
+                <p th:if="${param.error}" class="error">
+                    Usuario o contraseña incorrectos
+                </p>
+                <div>
+                    <p >¿No tienes cuenta? <a href="/registrarse" style="text-decoration: underline;">Pincha aquí</a></p>
+                </div>
             </form>
-            <p th:if="${param.error}">
-                Usuario o contraseña incorrectos
-            </p>
         </div>
     </main>
     <footer th:replace="~{layout :: footer}"></footer>

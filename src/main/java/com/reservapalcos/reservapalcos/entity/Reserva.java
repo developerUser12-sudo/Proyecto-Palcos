@@ -1,5 +1,6 @@
 package com.reservapalcos.reservapalcos.entity;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 import com.reservapalcos.reservapalcos.enums.DiasSemana;
@@ -33,6 +34,7 @@ public class Reserva {
     private Integer ano;
     @Column(nullable=true)
     private LocalDateTime fechaSalida;
+    private BigDecimal precio;
 
     public Reserva() {
     }
@@ -71,6 +73,12 @@ public class Reserva {
     }
     public void setFechaSalida(LocalDateTime fechaSalida) {
         this.fechaSalida = fechaSalida;
+    }
+    public BigDecimal getPrecio() {
+        return precio;
+    }
+    public void setPrecio(BigDecimal precio) {
+        this.precio = precio;
     }    
     
     
