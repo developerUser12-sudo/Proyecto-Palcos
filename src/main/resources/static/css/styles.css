@@ -90,6 +90,7 @@ input {
     padding: 10px;
     border-radius: 10px;
     color: white;
+   
 }
 
 .box {
@@ -142,6 +143,7 @@ input {
     flex-direction: row;
     justify-content: space-around;
     gap: 70px;
+    display: none;
 }
 
 .form-palcos {
@@ -155,4 +157,55 @@ input {
     .form-palcos {
         flex-direction: column;
     }
+}
+button{
+    border-radius: 5px;
+    padding: 10px;
+}
+.botones-dias{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.botones-dias button{
+    background-color: #b3a1a1;
+}
+.form-palcos-alinear{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+.form-palcos-alinear input{
+    align-self: center;
+}
+.reservar-contenido{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.5);
+    justify-content:center;
+    align-items:center;
+}
+
+.modal-contenido{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    min-width:300px;
+    text-align:center;
+}
+.modal-mensaje, .cerrar-modal{
+    
+    color: black;
+}
+.cerrar-modal{
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 5px;
 }

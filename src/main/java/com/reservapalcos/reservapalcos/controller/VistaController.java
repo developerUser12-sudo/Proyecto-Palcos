@@ -1,8 +1,5 @@
 package com.reservapalcos.reservapalcos.controller;
 
-import java.util.Set;
-import java.util.stream.Collectors;
-
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
@@ -51,13 +48,8 @@ public class VistaController {
     public String vistaReserva(Model model) {
         model.addAttribute("dias", DiasSemana.values());
         model.addAttribute("palcos", palcoRepository.findAll());
-        Set<Long> palcosOcupados = reservaRepository.findByAno(reservaService.calcularAnoSiguiente())
-                .stream()
-                .map(reserva -> reserva.getPalco().getId())
-                .collect(Collectors.toSet());
-
-        model.addAttribute("palcosOcupados", palcosOcupados);
-        model.addAttribute("reservas", reservaRepository.findByAno(reservaService.calcularAnoSiguiente()));
+        
+        model.addAttribute("reservasHechas", reservaRepository.findByAno(reservaService.calcularAnoSiguiente()));
         return "reservar";
     }
 

@@ -29,6 +29,10 @@
                     <label for="contrasena">Contraseña</label>
                     <input type="password" name="contrasena" id="contrasena" required>
                 </div>
+                <div style="margin-top: 10px;">
+                    <label for="renember-me">Recuérdame</label>
+                    <input type="checkbox" name="remember-me" id="renember-me">
+                </div>
                 <input class="submit" type="submit" value="Iniciar sesión">
                 <p th:if="${param.error}" class="error">
                     Usuario o contraseña incorrectos
